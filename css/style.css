@@ -75,7 +75,7 @@ textarea {
 .eachnote {
 	max-height: 25vh;
 	max-width: 50vh;
-	border: 0.5px dotted #333;
+	border: 1px dotted #333;
 	borderradius: 5px;
 
 	overflow: hidden;
