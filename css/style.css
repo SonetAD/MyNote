@@ -50,8 +50,7 @@ textarea {
 .notes {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
-	grid-column-gap: 2em;
-	margin: 30px 10px;
+	margin: 30px 0px;
 }
 
 .notes div h1 {
@@ -73,9 +72,13 @@ textarea {
 	transform: translateY(-20px);
 }
 
-.notes div {
-	max-height: 500px;
-	overflow-y: hidden;
+.eachnote {
+	max-height: 25vh;
+	max-width: 50vh;
+	border: 0.5px dotted #333;
+	borderradius: 5px;
+
+	overflow: hidden;
 	text-align: center;
 }
 
