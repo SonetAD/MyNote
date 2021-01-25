@@ -115,6 +115,7 @@ textarea {
 .savebtn {
 	display: block;
 	background-color: blue;
+	color: white;
 	width: 70%;
 	margin: auto;
 	transform: translateY(20px);
