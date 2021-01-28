@@ -137,24 +137,24 @@ class GUI extends Database {
 			for (let i = 0; i < this.mynote_title.length; i++) {
 				// create main note div
 				let createDiv = document.createElement('div');
+				createDiv.className = `${i} eachnote everyelement`;
 
 				// create note title and append in div
-				createDiv.className = `${i} eachnote`;
 				let createTitle = document.createElement('h1');
-				createTitle.className = 'eachnotetitle';
+				createTitle.className = `${i} eachnotetitle everyelement`;
 				createTitle.textContent = this.mynote_title[i];
 				createDiv.appendChild(createTitle);
 
 				// create date and append in div
 				let createDate = document.createElement('h4');
 				createDate.textContent = this.mynote_date[i];
-				createDate.className = 'eachnotedate';
+				createDate.classList = `${i} eachnotedate everyelement`;
 				createDiv.appendChild(createDate);
 
 				// create notebody and append it in div
 				let createNote = document.createElement('p');
 				createNote.textContent = this.mynote_note[i];
-				createNote.className = 'eachnotebody';
+				createNote.className = `${i} eachnotebody everyelement`;
 				createDiv.appendChild(createNote);
 
 				// append the div into main div
@@ -168,12 +168,11 @@ class GUI extends Database {
 
 	displaySingleNote() {
 		this.notes.addEventListener('click', function (e) {
-			if (e.target.classList.contains('eachnote')) {
+			if (e.target.classList.contains('everyelement')) {
 				let index = parseInt(e.target.classList[0]);
 				mynote.mainpage.style.display = 'none';
 				mynote.singleNotePage.style.display = 'block';
 
-				console.log(index);
 				mynote.singleNoteTitle.textContent = mynote.mynote_title[index];
 
 				mynote.singleNoteDate.textContent = `Date : ${mynote.mynote_date[index]}`;
@@ -182,6 +181,7 @@ class GUI extends Database {
 
 			e.preventDefault();
 		});
+
 		this.homeBtn.addEventListener('click', function (e) {
 			mynote.mainpage.style.display = 'block';
 			mynote.singleNotePage.style.display = 'none';
