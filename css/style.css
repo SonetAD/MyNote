@@ -1,12 +1,13 @@
 * {
 	box-sizing: border-box;
+	color:white;
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;px
 	padding: 0px;
-	background-color:black;
+	background-color: black;
 	color:white;
 }
 
