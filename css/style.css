@@ -1,6 +1,8 @@
 * {
 	box-sizing: border-box;
 	color:white;
+	overflow-wrap: break-word;
+
 }
 
 body {
@@ -139,8 +141,6 @@ textarea {
 .singlenotepage {
 	display: none;
 	background-color: black;
-	height:100%;
-	max-width: 100%;
 	margin: 1rem;
 
 }
