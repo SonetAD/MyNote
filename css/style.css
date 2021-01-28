@@ -1,7 +1,6 @@
 * {
 	box-sizing: border-box;
 	color:white;
-	overflow-wrap: break-word;
 
 }
 
@@ -142,6 +141,8 @@ textarea {
 	display: none;
 	background-color: black;
 	margin: 1rem;
+	overflow-wrap: break-word;
+
 
 }
 
