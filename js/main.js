@@ -47,6 +47,9 @@ class GUI extends Database {
 		this.singleNoteDate = document.querySelector('.singlenotedate');
 		this.singleNotebody = document.querySelector('.singlenotebody');
 		this.homeBtn = document.querySelector('.home');
+		this.containerForDelOrEdit = document.querySelector(
+			'.containerfordeloredit'
+		);
 	}
 
 	alertMessage(parentDiv, targetDiv, text, time, clr, bgclr) {
@@ -225,10 +228,27 @@ class GUI extends Database {
 			}
 		});
 	}
+
+	deloredit() {
+		let getEveryElement = document.querySelector('.everyelement');
+
+		this.notes.addEventListener('mousedown', function (e) {
+			if (e.target.classList.contains('everyelement')) {
+				console.log(e.target);
+				mynote.mainpage.style.position = 'fixed';
+				mynote.mainpage.style.top = 0;
+				mynote.mainpage.style.zIndex = 0;
+				mynote.mainpage.style.opacity = 0.7;
+				mynote.containerForDelOrEdit.style.display = 'flex';
+			}
+			e.preventDefault();
+		});
+	}
 }
 
 let mynote = new GUI();
 mynote.displayNote();
 mynote.searchNotes();
+mynote.deloredit();
 mynote.displaySingleNote();
 mynote.addNote();

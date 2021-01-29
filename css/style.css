@@ -169,3 +169,44 @@ textarea {
 	position: fixed;
 	bottom: 10px;
 }
+
+/* deloredit section style */
+
+.containerfordeloredit {
+	display: none;
+	height:100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.deloredit {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 40vh;
+	height:15vh;
+	z-index: 2;
+	background-color: black;
+	border-radius: 15px;
+	animation:animation1 3s forwards;
+}
+@keyframes animation1 {	
+	from {
+		opacity: 0;
+		font-weight: 100;
+		z-index: 0;
+	}
+	to {
+		opacity:1;
+		font-weight: bolder;
+		zIndex:2;
+	}
+}
+
+.edit, .del {
+	font-weight: bolder;
+	text-align: center;
+	margin:0px;
+	padding: 0px;
+}
+
