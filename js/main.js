@@ -47,9 +47,8 @@ class GUI extends Database {
 		this.singleNoteDate = document.querySelector('.singlenotedate');
 		this.singleNotebody = document.querySelector('.singlenotebody');
 		this.homeBtn = document.querySelector('.home');
-		this.containerForDelOrEdit = document.querySelector(
-			'.containerfordeloredit'
-		);
+		this.editBtn = document.querySelector('.edit');
+		this.delBtn = document.querySelector('.del');
 	}
 
 	alertMessage(parentDiv, targetDiv, text, time, clr, bgclr) {
@@ -170,9 +169,10 @@ class GUI extends Database {
 	}
 
 	displaySingleNote() {
+		let index = 0;
 		this.notes.addEventListener('click', function (e) {
 			if (e.target.classList.contains('everyelement')) {
-				let index = parseInt(e.target.classList[0]);
+				index = parseInt(e.target.classList[0]);
 				mynote.mainpage.style.display = 'none';
 				mynote.singleNotePage.style.display = 'block';
 
@@ -188,6 +188,42 @@ class GUI extends Database {
 		this.homeBtn.addEventListener('click', function (e) {
 			mynote.mainpage.style.display = 'block';
 			mynote.singleNotePage.style.display = 'none';
+
+			e.preventDefault();
+		});
+
+		this.editBtn.addEventListener('click', function (e) {
+			mynote.singleNotePage.style.display = 'none';
+			mynote.noteInputPage.style.display = 'block';
+			document.querySelector('.notetitle').value = mynote.mynote_title[index];
+			document.querySelector('.notebody').value = mynote.mynote_note[index];
+
+			//  delete old note
+
+			mynote.mynote_title.splice(index, 1);
+			mynote.mynote_date.splice(index, 1);
+			mynote.mynote_note.splice(index, 1);
+
+			localStorage.setItem('mynote_title', JSON.stringify(mynote.mynote_title));
+			localStorage.setItem('mynote_note', JSON.stringify(mynote.mynote_note));
+			localStorage.setItem('mynote_date', JSON.stringify(mynote.mynote_date));
+
+			e.preventDefault();
+		});
+
+		this.delBtn.addEventListener('click', function (e) {
+			mynote.singleNotePage.style.display = 'none';
+			mynote.mainpage.style.display = 'block';
+
+			mynote.mynote_title.splice(index, 1);
+			mynote.mynote_date.splice(index, 1);
+			mynote.mynote_note.splice(index, 1);
+
+			localStorage.setItem('mynote_title', JSON.stringify(mynote.mynote_title));
+			localStorage.setItem('mynote_note', JSON.stringify(mynote.mynote_note));
+			localStorage.setItem('mynote_date', JSON.stringify(mynote.mynote_date));
+
+			window.location.reload();
 
 			e.preventDefault();
 		});
