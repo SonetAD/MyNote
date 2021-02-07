@@ -14,6 +14,8 @@ MyNote is a simple note taking application.You can use it to keep your note secr
 - HTML5,CSS3 & vanila Javascript has been used to build the entire app.
   _The app is only optimised for mobile _ tablet view.No optimization has done for desktop view,as it was created for mobile device.
 
+* [Font Awesome](https://fontawesome.com/) free web icons have been used.
+
 ## Developer info:
 
 ### Name: Sonet Adhikary
